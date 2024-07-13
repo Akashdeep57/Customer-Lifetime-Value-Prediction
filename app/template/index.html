@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Lifetime Value Prediction</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ffecd2, #fcb69f); /* Gradient background */
+            font-family: Arial, sans-serif;
+            margin: 0; /* Remove default margin */
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            max-width: 500px;
+            padding: 20px;
+            background-color: #fff; /* White background for the form */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], select {
+            width: calc(100% - 22px); /* Adjusted width to make input boxes smaller */
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        .input-submit {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #4CAF50; /* Green submit button */
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .input-submit:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Lifetime Value Prediction</h1>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="recency">Recency:</label>
+                <input type="text" id="recency" name="recency" required>
+            </div>
+
+            <div class="form-group">
+                <label for="frequency">Frequency:</label>
+                <input type="text" id="frequency" name="frequency" required>
+            </div>
+
+            <div class="form-group">
+                <label for="monetary">Monetary:</label>
+                <input type="text" id="monetary" name="monetary" required>
+            </div>
+
+            <div class="form-group">
+                <label for="tenure">Tenure:</label>
+                <input type="text" id="tenure" name="tenure" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country" required>
+            </div>
+
+            <input type="submit" value="Predict CLV" class="input-submit">
+        </form>
+    </div>
+</body>
+</html>
